@@ -5,6 +5,7 @@ import (
 	"image"
 	"mime"
 	"net/http"
+	l "palybill/app/lib"
 	"path"
 	"strings"
 )
@@ -24,10 +25,10 @@ func uploadHandler(c *gin.Context) {
 	c.SaveUploadedFile(file, file.Filename)
 
 	extension := strings.ToLower(path.Ext(file.Filename))
-	c.JSON(http.StatusOK, successResponse{
-		code:    0,
-		message: "",
-		info: gin.H{
+	c.JSON(http.StatusOK, l.SuccessResponse{
+		Code:    0,
+		Message: "",
+		Info: gin.H{
 			"name":      file.Filename,
 			"extension": extension,
 			"mime":      mime.TypeByExtension(extension),
