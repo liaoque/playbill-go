@@ -10,14 +10,11 @@ func Routers(r *gin.Engine) {
 	v1.Use(middleware.Global())
 	v1.GET("/login", loginHandler)
 
-	//v1.GET("/getAsyncRoutes", loginHandler)
-	//v1.GET("/uploads", loginHandler)
-	//v1.GET("/playbill/view", loginHandler)
-	//v1.GET("/playbill/list", loginHandler)
-	//v1.GET("/playbill/save", loginHandler)
-	//v1.GET("/playbill/query/id/:id", loginHandler)
-	//v1.GET("/error/403.html", loginHandler)
-	//v1.GET("/error/502.html", loginHandler)
+	v1.GET("/getAsyncRoutes", routesHandler)
+	v1.GET("/uploads", uploadHandler)
+
+	v1.GET("/error/403.html", loginHandler)
+	v1.GET("/error/502.html", loginHandler)
 
 	//// 2.绑定路由规则，执行的函数
 	//// gin.Context，封装了request和response
