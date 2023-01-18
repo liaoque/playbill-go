@@ -7,9 +7,6 @@ import (
 )
 
 func loginHandler(c *gin.Context) {
-	//	return AppResponse\AppResponse::success([
-	//		'token' => 'eyJhbGciOiJIUzUxMiJ9.test'
-	//]);
 	c.JSON(http.StatusOK, l.SuccessResponse{
 		Code:    0,
 		Message: "",
@@ -17,5 +14,4 @@ func loginHandler(c *gin.Context) {
 			"token": "eyJhbGciOiJIUzUxMiJ9.test",
 		},
 	})
-	//c.String()
 }

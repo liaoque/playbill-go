@@ -1,11 +1,9 @@
-package api
-
-import "github.com/gin-gonic/gin"
+package lib
 
 type SuccessResponse struct {
 	Code    int
 	Message string
-	Info    gin.H
+	Info    any
 }
 
 type ErrorResponse struct {
