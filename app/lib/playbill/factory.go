@@ -1,12 +1,30 @@
 package playbill
 
 import (
+	"database/sql"
 	vips "github.com/davidbyttow/govips/v2/vips"
 	"palybill/app/model"
 	"strings"
 )
 
 func Load(data model.Poster, changeData map[string]interface{}) {
+
+	image, err := createArea(data)
+	if err != nil {
+		return
+	}
+
+	if data.Data["backgroundImage"] != nil || data.Data["background"] != nil {
+		if data.Data["background"] != nil {
+
+		} else {
+
+		}
+	} else {
+
+	}
+
+	objects := data.Data["objects"]
 
 }
 
